@@ -1,412 +1,43 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>冴月ファンタジア茶館</title>
+    <title>冴月ファンタジア茶館</title>
 
-<style>
-
-    :root{
-        --text:#242424;
-        --secondary:#6b6b6b;
-        --border:#e6e6e6;
-        --bg:#ffffff;
-        --accent:#1a8917;
-    }
-
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-    }
-
-    html{
-        scroll-behavior:smooth;
-    }
-
-    body{
-        background:var(--bg);
-        color:var(--text);
-
-        font-family:
-                "Noto Serif CJK SC",
-                "Noto Serif CJK JP",
-                "Noto Serif",
-                serif;
-
-        line-height:1.8;
-
-        animation:fadeIn .8s ease;
-    }
-
-    /* 阅读进度条 */
-
-    /*.progress{*/
-    /*    position:fixed;*/
-    /*    top:0;*/
-    /*    left:0;*/
-
-    /*    width:0;*/
-    /*    height:3px;*/
-
-    /*    background:var(--accent);*/
-
-    /*    z-index:999;*/
-    /*}*/
-
-    /* 顶部导航 */
-
-    header{
-        position:sticky;
-        top:0;
-
-        background:white;
-
-        border-bottom:1px solid var(--border);
-
-        z-index:100;
-
-        backdrop-filter:blur(10px);
-    }
-
-    .nav{
-        max-width:1200px;
-
-        margin:auto;
-
-        height:60px;
-
-        display:flex;
-
-        align-items:center;
-        justify-content:space-between;
-
-        padding:0 30px;
-    }
-
-    .logo{
-        font-size:16px;
-        font-weight:bold;
-    }
-
-    .nav-right{
-        display:flex;
-        gap:20px;
-    }
-
-    .nav-right a{
-        text-decoration:none;
-        color:var(--secondary);
-    }
-
-    /* 主体 */
-
-    .container{
-        max-width:760px;
-
-        margin:auto;
-
-        padding:
-                80px
-                30px
-                100px;
-    }
-
-    /* 标题 */
-
-    .title{
-        font-size:3rem;
-
-        line-height:1.15;
-
-        font-weight:700;
-
-        margin-bottom:25px;
-    }
-
-    .subtitle{
-        font-size:1.3rem;
-
-        color:var(--secondary);
-
-        margin-bottom:40px;
-    }
-
-    /* 作者 */
-
-    .author{
-        display:flex;
-        align-items:center;
-
-        gap:15px;
-
-        margin-bottom:60px;
-    }
-
-    .author img{
-        width:48px;
-        height:48px;
-
-        border-radius:50%;
-    }
-
-    .author-info{
-        display:flex;
-        flex-direction:column;
-    }
-
-    .author-name{
-        font-weight:600;
-    }
-
-    .author-meta{
-        color:var(--secondary);
-        font-size:.9rem;
-    }
-
-    /* 封面图 */
-
-    .cover{
-        width:100%;
-
-        border-radius:6px;
-
-        margin-bottom:60px;
-    }
-
-    /* 内容 */
-
-    .content p{
-        font-size:1.15rem;
-
-        margin-bottom:28px;
-    }
-
-    .content h2{
-        margin-top:60px;
-        margin-bottom:25px;
-
-        font-size:2rem;
-
-        line-height:1.3;
-    }
-
-    .content h3{
-        margin-top:40px;
-        margin-bottom:20px;
-    }
-
-    .content ul{
-        padding-left:30px;
-        margin-bottom:30px;
-    }
-
-    .content li{
-        margin-bottom:10px;
-    }
-
-    .content blockquote{
-
-        border-left:4px solid var(--accent);
-
-        padding-left:20px;
-
-        margin:40px 0;
-
-        color:var(--secondary);
-
-        font-style:italic;
-    }
-
-    .content img{
-        width:100%;
-
-        margin:50px 0;
-
-        border-radius:6px;
-    }
-
-    .content code{
-
-        background:#f3f3f3;
-
-        padding:3px 8px;
-
-        border-radius:4px;
-
-        font-size:.95rem;
-    }
-
-    .content pre{
-
-        overflow:auto;
-
-        background:#1f2937;
-
-        color:white;
-
-        padding:25px;
-
-        border-radius:8px;
-
-        margin:30px 0;
-    }
-
-    /* 标签 */
-
-    .tags{
-        margin-top:70px;
-    }
-
-    .tag{
-        display:inline-block;
-
-        background:#f2f2f2;
-
-        padding:8px 16px;
-
-        border-radius:999px;
-
-        margin-right:10px;
-
-        margin-bottom:10px;
-
-        color:#444;
-
-        font-size:.9rem;
-    }
-
-    /* 底部 */
-
-    footer{
-
-        border-top:1px solid var(--border);
-
-        margin-top:80px;
-
-        padding-top:40px;
-
-        color:var(--secondary);
-
-        text-align:center;
-    }
-
-    /*Safari 字体适配*/
-    @supports (-webkit-touch-callout: none) {
-        body{
-            font-family:
-                "Songti SC",
-                "Songti TC",
-                "Hiragino Mincho ProN",
-                "Yu Mincho",
-                serif;
-        }
-
-    }
-
-    /* 动画 */
-
-    @keyframes fadeIn{
-        from{
-            opacity:0;
-            transform:translateY(20px);
-        }
-        to{
-            opacity:1;
-            transform:none;
-        }
-    }
-
-    /* 手机 */
-
-    @media(max-width:768px){
-
-        .title{
-            font-size:1.5rem;
-        }
-
-        .subtitle{
-            font-size:1.0rem;
-        }
-
-        .container{
-            padding:40px 20px 80px;
-            /*font-size: 1.5rem;*/
-        }
-
-        .content p{
-            font-size:1.05rem;
-        }
-
-        .content h2{
-            font-size: 1.2rem;
-        }
-    }
-
-</style>
-
+    <link rel="stylesheet" href="../style/global.css">
+    <link rel="stylesheet" href="../style/home.css">
 </head>
+
 <body>
 
 <div class="progress" id="progress"></div>
 
 <header>
     <div class="nav">
+        <div class="logo">冴月ファンタジア茶館</div>
 
-    <div class="logo">
-        冴月ファンタジア茶館
+        <div class="nav-right">
+            <a href="https://www.frchans.com/">欢迎页面</a>
+            <a href="archives.html">归档</a>
+            <a href="#">回到顶部</a>
+        </div>
     </div>
-
-    <div class="nav-right">
-        <a href="https://www.frchans.com/">首页</a>
-         <a href="archives.html">归档</a>
-        <!-- <a href="#">关于</a> -->
-    </div>
-
-</div>
-
 </header>
 
 <main class="container">
 
-<h1 class="title">
-    冴月ファンタジア茶館 首页
-</h1>
+<h1 class="title">冴月ファンタジア茶馆 首页</h1>
 
-<div class="subtitle">
-    致力于东方Project同人创作的同人社团
-</div>
+<div class="subtitle">致力于东方Project同人创作的同人社团</div>
 
 <div class="author">
-
-<!--        <img src="https://i.pravatar.cc/150"-->
-
-<!--             alt="avatar">-->
-
     <div class="author-info">
-
-        <div class="author-name">
-            Franks Chan 红茶
-        </div>
-
-        <div class="author-meta">
-            最新编辑于 2026年6月26日
-        </div>
-
+        <div class="author-name">Franks Chan 红茶</div>
+        <div class="author-meta">最新编辑于 2026年6月26日</div>
     </div>
-
 </div>
-
-<!--    <img-->
-
-<!--            class="cover"-->
-
-<!--            src="https://picsum.photos/1200/700"-->
-
-<!--            alt="cover">-->
 
 <article class="content">
 
@@ -492,14 +123,6 @@
 
 </article>
 
-<!--    <div class="tags">-->
-
-<!--        <span class="tag">Main</span>-->
-
-<!--        <span class="tag">About</span>-->
-
-<!--    </div>-->
-
 <footer>
     © 2017 - 2026 Satsuki-Gensou Tea++ Studio
 </footer>
@@ -507,24 +130,14 @@
 </main>
 
 <script>
+window.addEventListener("scroll",()=>{
 
-    window.addEventListener("scroll",()=>{
+    const winScroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
 
-        const winScroll =
-            document.documentElement.scrollTop;
-
-        const height =
-            document.documentElement.scrollHeight -
-            document.documentElement.clientHeight;
-
-        const scrolled =
-            (winScroll / height) * 100;
-
-        document.getElementById("progress")
-            .style.width = scrolled + "%";
-
-    });
-
+    document.getElementById("progress").style.width = scrolled + "%";
+});
 </script>
 
 </body>
