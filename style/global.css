@@ -22,6 +22,16 @@ body{
 
     font-family:"ProjectSerif", serif;
     line-height:1.8;
+
+    display:grid;
+}
+
+html,body{
+    height:100vh;
+}
+
+main{
+
 }
 
 header{
@@ -34,9 +44,11 @@ header{
 }
 
 .nav{
-    max-width:1200px;
+    max-width:100%;
     margin:auto;
     height:60px;
+    background-color: black;
+    color: white;
 
     display:flex;
     align-items:center;
@@ -45,7 +57,85 @@ header{
     padding:0 30px;
 }
 
-.logo{
+/*2026.07.07 update*/
+
+.footer {
+    width:100%;
+    background-color: #333333;
+    color: white;
+}
+
+.footer-container {
+    /*display: grid;*/
+
+    /*grid-template-columns:*/
+    /*    1.3fr*/
+    /*    1fr*/
+    /*    0.8fr;*/
+
+    /*gap: 80px;*/
+    max-width: 1200px;
+    margin:0 auto;
+    /*padding: px;*/
+}
+
+.footer h4 {
+    font-size: 12px;
+    letter-spacing: .15em;
+    margin-bottom: 20px;
+}
+
+.newsletter-form {
+    display: flex;
+    width: 280px;
+    border: 1px solid #555;
+}
+
+.newsletter-form input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 12px;
+    outline: none;
+}
+
+.newsletter-form button {
+    width: 50px;
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.footer-nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer-nav a:hover {
+    color: white;
+}
+
+.contact {
+    margin-top: 40px;
+}
+
+.contact p {
+    color: #aaa;
+    line-height: 1.8;
+}
+
+/*2026.07.07 update*/
+
+.logo {
     font-size:16px;
     font-weight:bold;
 }

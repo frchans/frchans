@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="../style/global.css">
     <link rel="stylesheet" href="../style/fadein-animation.css">
+    <link href="../style/menu.css" rel="stylesheet">
     <style>
         .content p {
             text-indent: 0;
@@ -19,13 +20,26 @@
 
 <header>
     <div class="nav">
+        <div class="logo">冴月ファンタジア茶館</div>
 
-        <div class="logo">
-            冴月ファンタジア茶館
+        <div class="nav-right">
+            <button id="menuButton" class="menu-button">
+                ☰
+            </button>
+
+            <div id="popupMenu" class="popup-menu">
+
+                <a href="#" class="closeMenu">回到顶部</a>
+                <a href="https://www.frchans.com/">欢迎页面</a>
+                <a href="archives.html">归档</a>
+
+                <div class="menu-divider"></div>
+
+                <a href="about.html">关于</a>
+
+            </div>
         </div>
-
     </div>
-
 </header>
 
 <main class="container">
@@ -48,11 +62,34 @@
 
     </article>
 
-    <footer>
-        © 2017 - 2026 Satsuki-Gensou Tea++ Studio
-    </footer>
-
 </main>
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <section class="footer-newsletter">
+            <!--            <h4>冴月ファンタジア茶館</h4>-->
+
+            <p class="copyright">
+                © 2017 - 2026 Satsuki-Gensou Tea++ Studio
+            </p>
+        </section>
+
+        <section class="footer-contact">
+
+            <div class="contact">
+                <h4>CONTACT US</h4>
+
+                <p>frchans@icloud.com</p>
+
+                <p>qech3316@gmail.com</p>
+            </div>
+        </section>
+
+    </div>
+</footer>
+
+<script src="../script/menu.js"></script>
 
 </body>
 </html>

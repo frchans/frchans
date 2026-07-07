@@ -25,57 +25,43 @@
     font-size: 28px;
     line-height: 1;
 
-    color: #333;
+    color: white;
 
     appearance: none;
     -webkit-appearance: none;
 }
 
-.menu-button:hover {
-    background: #f5f5f5;
-}
+/*.menu-button:hover {*/
+/*    background: #f5f5f5;*/
+/*}*/
 
 /* 弹出菜单 */
 
 .popup-menu {
-
     position: fixed;
-
-    top: 72px; /* Header高度 */
-
+    top: 60px;
     left: 0;
     right: 0;
-    bottom: 0;
-
-    background: #0b2342;
-
-    display: none;
-
-    overflow-y: auto;
-
+    background: black;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+    overflow: hidden;
     z-index: 999;
 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0);
+    transition: opacity 0.5s ease,
+        transform 0.5s ease,
+        visibility 0.5s ease;
 }
-
-/*.popup-menu {*/
-/*    display: none;*/
-/*    position: absolute;*/
-/*    top: 50px;*/
-/*    right: 0;*/
-/*    width: 220px;*/
-/*    background: white;*/
-/*    border-radius: 12px;*/
-/*    box-shadow: 0 10px 30px rgba(0, 0, 0, .15);*/
-/*    overflow: hidden;*/
-/*}*/
-
-/* 显示 */
 
 .popup-menu.show {
-    display: block;
+    /*display: block;*/
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
-
-/* 菜单项 */
 
 .popup-menu a,
 .menu-item {
@@ -84,7 +70,7 @@
 
     padding: 14px 18px;
 
-    color: #333;
+    color: white;
 
     text-decoration: none;
 

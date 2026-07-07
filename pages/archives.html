@@ -8,6 +8,8 @@
     <title>冴月ファンタジア茶館 - 公开归档</title>
 
     <link rel="stylesheet" href="../style/global.css">
+    <link href="../style/menu.css" rel="stylesheet">
+    <link href="../style/progress.css" rel="stylesheet">
     <style>
         .content p{
             text-indent:0;
@@ -20,18 +22,26 @@
 
 <header>
     <div class="nav">
-
-        <div class="logo">
-            冴月ファンタジア茶館
-        </div>
+        <div class="logo">冴月ファンタジア茶館</div>
 
         <div class="nav-right">
-            <a href="home.html">首页</a>
-            <a href="#">回到顶部</a>
+            <button id="menuButton" class="menu-button">
+                ☰
+            </button>
+
+            <div id="popupMenu" class="popup-menu">
+
+                <a href="#" class="closeMenu">回到顶部</a>
+                <a href="https://www.frchans.com/">欢迎页面</a>
+                <a href="archives.html">归档</a>
+
+                <div class="menu-divider"></div>
+
+                <a href="about.html">关于</a>
+
+            </div>
         </div>
-
     </div>
-
 </header>
 
 <main class="container">
@@ -63,32 +73,35 @@
 
     </article>
 
-    <footer>
-        © 2017 - 2026 Satsuki-Gensou Tea++ Studio
-    </footer>
-
 </main>
 
-<script>
+<footer class="footer">
+    <div class="footer-container">
 
-    window.addEventListener("scroll",()=>{
+        <section class="footer-newsletter">
+            <!--            <h4>冴月ファンタジア茶館</h4>-->
 
-        const winScroll =
-            document.documentElement.scrollTop;
+            <p class="copyright">
+                © 2017 - 2026 Satsuki-Gensou Tea++ Studio
+            </p>
+        </section>
 
-        const height =
-            document.documentElement.scrollHeight -
-            document.documentElement.clientHeight;
+        <section class="footer-contact">
 
-        const scrolled =
-            (winScroll / height) * 100;
+            <div class="contact">
+                <h4>CONTACT US</h4>
 
-        document.getElementById("progress")
-            .style.width = scrolled + "%";
+                <p>frchans@icloud.com</p>
 
-    });
+                <p>qech3316@gmail.com</p>
+            </div>
+        </section>
 
-</script>
+    </div>
+</footer>
+
+<script src="../script/progress.js"></script>
+<script src="../script/menu.js"></script>
 
 </body>
 </html>
