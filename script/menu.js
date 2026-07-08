@@ -23,3 +23,7 @@ menu.addEventListener("click", function (e) {
     e.stopPropagation();
 
 });
+
+document.querySelector('.closeMenu').addEventListener('click', function() {
+    document.getElementById('popupMenu').classList.remove('show');
+});
