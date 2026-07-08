@@ -1,0 +1,25 @@
+ .nav
+ {
+     max-width: 100vh;
+     margin: auto;
+     height: 60px;
+     background-color: black;
+     color: white;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 0 30px;
+     position: relative;
+ }
+
+ .nav-right
+ {
+     display: flex;
+     gap: 20px;
+ }
+
+ .nav-right a
+ {
+     text-decoration: none;
+     color: var(--secondary);
+ }
