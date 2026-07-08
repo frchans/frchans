@@ -68,11 +68,23 @@
 
 .contact
 {
-    margin-top: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .contact p
 {
     color: white;
     line-height: 1.8;
+}
+
+
+footer
+{
+    border-top: 1px solid var(--border);
+    margin-top: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: var(--secondary);
+    text-align: center;
 }

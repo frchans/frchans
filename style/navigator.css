@@ -3,13 +3,19 @@
      max-width: 100%;
      margin: auto;
      height: 60px;
-     background-color: black;
+     background-color: rgba(0, 0, 0, 0.7);
      color: white;
      display: flex;
      align-items: center;
      justify-content: space-between;
      padding: 0 30px;
-     position: relative;
+     /*position: relative;*/
+
+     backdrop-filter: blur(20px);
+     -webkit-backdrop-filter: blur(20px);
+     position: sticky;
+     top: 0;
+     z-index: 999;
  }
 
  .nav-right

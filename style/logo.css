@@ -2,7 +2,7 @@
 {
     font-size: 16px;
     font-weight: bold;
-    background-color: black !important;
+    background-color: rgba(0, 0, 0, 0) !important;
     color: white !important;
     border: none;
 }
