@@ -24,6 +24,25 @@ menu.addEventListener("click", function (e) {
 
 });
 
-document.querySelector('.closeMenu').addEventListener('click', function() {
-    document.getElementById('popupMenu').classList.remove('show');
-});
+const closeMenuBtn = document.querySelector('.closeMenu');
+const popupMenu = document.getElementById('popupMenu');
+
+if (closeMenuBtn && popupMenu) {
+    const handleClose = function(e) {
+        popupMenu.classList.remove('show');
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+    closeMenuBtn.addEventListener('touchstart', function(e) {
+        handleClose(e);
+    }, { passive: true });
+
+    closeMenuBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        handleClose(e);
+    });
+}
